@@ -6,8 +6,8 @@ Kubernetes Konfiguration mit MySQL und phpMyAdmin.
 |---|---|
 |ConfigMap|enthält nicht-sensible Umgebungsvariablen wie Benutzername oder Hostname
 |Secret|enthält sensible Daten wie Passwörter – Rancher zeigt diese sicher an
-|PVC|sorgt für persistente Daten für Postgres und PgAdmin
-|Deployments|erstellen jeweils einen Pod (postgres, pgadmin), mit Umgebung und Storage
+|PVC|sorgt für persistente Daten für MySQL und phpMyAdmin
+|Deployments|erstellen jeweils einen Pod (mysql, phpmyadmin), mit Umgebung und Storage
 |Services|ermöglichen Kommunikation und externe Erreichbarkeit über Port-Forward oder NodePort
 
 ## Installation
@@ -21,7 +21,7 @@ kubectl apply -f k8s/phpmyadmin-deployment.yaml
 kubectl apply -f k8s/services.yaml
 ```
 
-## Zugriff PgAdmin
+## Zugriff phpMyAdmin
 Wenn du NodePort nutzt, kannst du mit `kubectl get svc phpmyadmin` die externe Portnummer sehen, z. B.:
 
 ```bash
